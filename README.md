@@ -22,7 +22,7 @@
 ```
 or
 ```
-> docker-composer down --volume
+> docker-compose down --volume
 ```
 
 *The last command remove also the data volume (MySQL).*
