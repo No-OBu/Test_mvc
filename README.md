@@ -3,13 +3,15 @@
 ## Requirement
 
 * Docker
-* MySQL (for cli)
 
 ## Installation
 ```
 > docker-compose build
 > docker-compose up -d
-> mysql -h 127.0.0.1 -u i@d_user -pi@d_pass i@d_test < dump_i@d_test.sql
+```
+When MySQL is ready, you can start importing the data :
+```
+> docker exec -i idchat_db_1 mysql -ui@d_user -pi@d_pass i@d_test < dump_i@d_test.sql
 ```
 
 ## Run
