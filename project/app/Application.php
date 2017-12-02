@@ -3,7 +3,6 @@ namespace Application;
 
 class Application
 {
-    private $config;
     private $container;
     private $request;
     private $router;
@@ -11,7 +10,6 @@ class Application
     public function __construct($config, $services, $route)
     {
         $config['route'] = $route;
-        $this->config = $confif;
         $this->container = new Container($config, $services);
     }
 
