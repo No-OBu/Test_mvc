@@ -5,7 +5,7 @@
 * Docker
 * MySQL (for cli)
 
-## installation
+## Installation
 ```
 > docker-compose up -d
 > mysql -h 127.0.0.1 -u i@d_user -pi@d_pass i@d_test < dump_i@d_test.sql
