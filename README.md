@@ -12,7 +12,7 @@
 ```
 When MySQL is ready, you can start importing the data :
 ```
-> docker exec -i idchat_db_1 mysql -ui@d_user -pi@d_pass i@d_test < dump_i@d_test.sql
+> docker exec -i chat_db mysql -ui@d_user -pi@d_pass i@d_test < dump_i@d_test.sql
 ```
 
 ## Run
@@ -30,3 +30,15 @@ or
 ```
 
 *The last command remove also the data volume (MySQL).*
+
+## Access
+```
+http://localhost:8000/
+```
+
+*If you change the server host you must also change the configuration otherwise the csrf simplified system will not work.*
+
+
+## Account
+
+The system automatically create an account if it does not exist when you try to sign in.
