@@ -1,0 +1,30 @@
+<?php include __DIR__.'/inc/header.inc'; ?>
+<div class="container">
+  <a href="<?php echo $router->generateRoute('logout_route'); ?>">Logout</a>
+    <h2 class="form-chat-heading">Chat</h2>
+    <?php if (!empty($errors)): ?>
+      <ul id="error_container">
+        <?php foreach ($errors as $error): ?>
+          <li><?php echo $error ?></li>
+        <?php endforeach; ?>
+      </ul>
+      <hr>
+    <?php endif; ?>
+    <div id="chatContent">
+      <?php foreach ($messages as $message): ?>
+        <div class="message">
+          <div class="author">[<?php echo $message->getDate()->format('H:i:s d/m/Y');?>] <?php echo $message->getAuthorModel()->getLogin();?> :</div>
+          <p class="message">
+            <?php echo $message->getContent(); ?>
+          </p>
+        </div>
+      <?php endforeach; ?>
+    </div>
+    <form name="formChat" method="post" action="<?php echo $router->generateRoute('chat_route'); ?>">
+      <textarea name="message" rows="8" cols="80"></textarea>
+      <br>
+      <button type="submit" name="button">Envoyer</button>
+      <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+    </form>
+</div>
+<?php include __DIR__.'/inc/footer.inc'; ?>

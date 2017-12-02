@@ -1,0 +1,26 @@
+<?php include __DIR__.'/inc/header.inc'; ?>
+<div class="container">
+
+  <form method="post" action="<?php echo $router->generateRoute('login_route'); ?>" class="form-signin">
+    <h2 class="form-signin-heading">Connexion</h2>
+    <?php if (!empty($errors)): ?>
+      <ul id="error_container">
+        <?php foreach ($errors as $error): ?>
+          <li><?php echo $error ?></li>
+        <?php endforeach; ?>
+      </ul>
+      <hr>
+    <?php endif; ?>
+    <br>
+    <label for="inputLogin" class="sr-only">Login</label>
+    <input name="login" type="text" id="inputLogin" class="form-control" placeholder="Login" required autofocus>
+    <br>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <input type="hidden" name="token" value="<?php echo $csrf_token; ?>">
+  </form>
+
+  </div
+  <?php __DIR__.'/inc/footer.inc'; ?>
