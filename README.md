@@ -3,6 +3,7 @@
 ## Requirement
 
 * Docker
+* DockerCompose v3
 
 ## Installation
 ```
